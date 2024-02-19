@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Evext</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		body
+		{
+			background-color:#b0c4de;
+		}
+	</style>
+</head>
+<body>
+<div class="dropdown">
+	<button type="button" class="btn dropdown-toggle btn-block btn-primary" id="dropdownMenu1" 
+			data-toggle="dropdown">
+		Evext
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation" class="btn-block">
+			<a role="menuitem" tabindex="-1" href="#esl">介绍</a>
+		</li>
+		<li role="presentation" class="btn-block">
+			<a role="menuitem" tabindex="-1" href="#install">安装Evest</a>
+		</li>
+		<li role="presentation" class="btn-block">
+			<a role="menuitem" tabindex="-1" href="#teach">基础教程</a>
+		</li>
+		<li role="presentation" class="divider"></li>
+		<li role="presentation" class="btn-block">
+			<a role="menuitem" tabindex="-1" href="#api">API参考</a>
+		</li>
+	</ul>
+</div>
+	<h1 id="esl">介绍</h1>
+	<h4>Python库Evext是基于Python所创作的一个数学计算库，<br>但也包含数据结构之类的类型。<br></h4>
+	<h4>这个库力求简便，快速，易于使用，并且可以与Numpy,Pandas接轨。<br></h4>
+	<br>
+	<h4>这个库现在处于开发阶段，如有问题，敬请原谅，<br>也可以联系我：enjoyrainy@126.com 。</h4>
+	<br><br>
+	<hr />
+	<h1 id="install">安装Evext</h1>
+	<p>(awa,都2024了，不会有人还不会用"pip install library-abc"吧)</p>
+	<h4>先确定好有没有Python，pip（最好是Python3.7+，装了Numpy，否则有些功能用不了。）,再在命令行输入以下代码</h4>
+	<h4><code>C:\Users\Administrator>pip install evext</code></h4>
+	<br>
+	<h4>为了确定Evext能用，请在Python中输入以下代码:</h4>
+	<h4><code>>>>import evext as xt</code></h4>
+	<h4>如果没有报错，请接着往下读</h4>
+	<br><br>
+	<hr />
+	<h1 id="teach">基础教程</h1>
+	<h4>首先，常规开始</h4>
+	<h4><code>import evext as xt</code></h4>
+	<h4>在Evext中，最基础的数据类型--列表（List），<br>可以用<code>xt.List()</code>定义:</h4>
+	<h4><code>>>>a = xt.List(value=[1,2,3])<br>>>>b = xt.List(value=a.value)<br>>>>a.add([1,2,3])<br>>>>a.value<br>[1,2,3]</code></h4>
+	<h4>你可以通过索引与值来删除xt.List中的值：</h4>
+	<h4><code>>>>a.delete_by_number(nu=1)<br>>>>a.value<br>[1,3]</code></h4>
+	<h4><code>>>>a.add([8,2,5])<br>>>>a.delete_by_value(vl=2)<br>>>>a.value<br>[1,3,8,5]</code></h4>
+	<h4><code>sort()</code>函数用于为xt.List()排序，更改List的值，并将排序后的结果返回。</h4>
+	<h4><code>>>>a.value<br>[1,3,8,5]<br>>>>a.sort()<br>[1,3,5,8]</code>
+	<h4>而<code>xt.add()</code><code>xt.sub()</code><code>xt.mul()</code><code>xt.div()</code>可以为两个xt.List做四则运算。</h4>
+	<h4><code>xt.math_function()与xt.array_function()</code>可以生成包含sin/cos/tan/线性函数/二次函数的xt.List或者值。</h4>
+	<h4><code>>>>xt.array_function(func=xt.MathFunction.sin,nm=10,start=0,spac=1).value<br>[0.0, 0.8414709848078965, 0.9092974268256817, 0.1411200080598672]</code></h4>
+	<h4><code>>>>xt.math_function()<br>0.8414709848078965</code></h4>
+	<br><br><hr />
+	<h1 id="api">API参考</h1>
+	<ul class="breadcrumb"><li><a href="#">.</a></li><li><a href="#">evext</a></li><li class="active">__init__.py</li></ul>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.List()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+			xt.List(value):<br>
+			|---add(val)<br>
+			|---delete_by_number(nu)<br>
+			|---delete_by_value(vl)<br>
+			|---len()<br>
+			|---value_to_np_array()<br>
+			|---sort()<br>
+			|---shape()<br>
+		</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.DataTable()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+			xt.DataTable(head,value=[]):<br>
+			|---add_item(adder)<br>
+			|---delete_item(name)<br>
+			|---to_list()<br>
+			|---show_itself()<br>
+			|---save(filename)<br>
+			|---shape()<br>
+		</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.Stack()
+			</h3>
+		</div>
+		<div class="panel-body">
+		<h4><code>
+			xt.Stack(value=[],max_size="Infinity"):<br>
+			|---push_in(val)<br>
+			|---push_back()<br>
+			|---clear()<br>
+		</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.List()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+			xt.DataTable(head,value=[]):<br>
+			|---add_item(adder)<br>
+			|---delete_item(name)<br>
+			|---to_list()<br>
+			|---show_itself()<br>
+			|---save(filename)<br>
+			|---shape()<br>
+		</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.Json()
+			</h3>
+		</div>
+		<div class="panel-body">
+		<h4><code>
+			xt.Json(value={}):<br>
+			|---all_key(val)<br>
+			|---all_value()<br>
+			|---all_item()<br>
+			|---launch_to_list()<br>
+			|---get_by_key(key)<br>
+			|---get_by_value(val)<br>
+			|---delete_by_key(key)<br>
+			|---delete_by_value(val)<br>
+			|---load_json(filename)<br>
+		</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.LargeNumber()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.Json(value="",cr=1)
+			</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.MathFunction()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+			xt.MathFunction():<br>
+			-sin = "sin"<br>
+			-cos = "cos"<br>
+			-tan = "tan"<br>
+			-linear = "linear"<br>
+			-quadratic = "quadratic"<br>
+			-index = "index"
+		</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.add()/xt.sub()/xt.mul()/xt.div()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.add(a,b)<br>
+				xt.sub(a,b)<br>
+				xt.mul(a,b)<br>
+				xt.div(a,b)
+			</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.factorial()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.factorial(end,start=1)
+			</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.math_function()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.factorial(func=MathFunction.sin,time=1,par=[1,1,1])
+			</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.array_function()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.array_function(func=MathFunction.sin,nm=10,start=0,spac=1,par=[1,1,1])
+			</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.add_large()/xt.sub_large()/xt.mul_large()/xt.div_large()
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.add_large(a,b)<br>
+				xt.sub_large(a,b)<br>
+				xt.mul_large(a,b)<br>
+				xt.div_large(a,b)
+			</code></h4>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				xt.load_json()<span class="badge">不推荐</span>
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h4><code>
+				xt.load_json(filename,to_type=None)
+			</code></h4>
+		</div>
+	</div>
+
+</body>
+</html>
